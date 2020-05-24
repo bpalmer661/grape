@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter } from 'react-router-dom' 
+import Navbar from './components/layout/NavBar';
+
+
 
 function App() {
   return (
@@ -10,12 +13,12 @@ function App() {
 <BrowserRouter> 
 
     <div className="App">
-     GRAPE
+   <Navbar />
     </div>
 
     </BrowserRouter>
    
-you need to edit the end of part 2 video to go with part 3 
+
 
 
 
