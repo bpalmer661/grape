@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Notifications from './Notifications';
+import PostList from '../posts/PostList';
 
 class Dashboard extends Component {
     render(){
@@ -6,18 +8,21 @@ class Dashboard extends Component {
   <div className = "dashboard container">
       <div className = "row">
 
-{/* small screen 12 colums and medium screen 6 colums */}
-     
-     {/* project list div */}
-      <div className = "col s12 m6"></div>
 
-{/* notifications div */}
-      <div className = "col s12 m5"></div>
+      <div className = "col s12 m6">
+          <PostList />
+      </div>
+
+
+      <div className = "col s12 m5 offset-m1"></div>
+      <Notifications />
 
       </div>
   </div>
-//   "sfsdf"
+
 
         )
     }
 }
+
+export default Dashboard
