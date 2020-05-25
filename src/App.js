@@ -2,9 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { BrowserRouter } from 'react-router-dom' 
+import { BrowserRouter,Switch,Route } from 'react-router-dom' 
 import Navbar from './components/layout/NavBar';
-
+import Dashboard from './components/dashboard/Dashboard'
 
 
 function App() {
@@ -14,8 +14,12 @@ function App() {
 
     <div className="App">
    <Navbar />
-    </div>
 
+   <Switch>
+<Route path = '/' component={Dashboard} />
+   </Switch>
+
+    </div>
     </BrowserRouter>
    
 
