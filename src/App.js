@@ -5,6 +5,7 @@ import './App.css';
 import { BrowserRouter,Switch,Route } from 'react-router-dom' 
 import Navbar from './components/layout/NavBar';
 import Dashboard from './components/dashboard/Dashboard'
+import PostDetails from './components/posts/PostDetails'
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
    <Navbar />
 
    <Switch>
-<Route path = '/' component={Dashboard} />
+<Route exact path = '/' component={Dashboard} />
+<Route path = '/post/:id' component={PostDetails} />
    </Switch>
 
     </div>

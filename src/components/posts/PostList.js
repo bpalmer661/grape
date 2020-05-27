@@ -5,7 +5,7 @@ const PostList = () => {
 
     return (
 
-        <div className="project-list section">
+        <div className="post-list section">
           
           <PostSummary />
          
@@ -21,11 +21,6 @@ const PostList = () => {
          
           <PostSummary />
          
-          
-          
-
-          
-
 
         </div>
     )
