@@ -12,7 +12,7 @@ const id = props.match.params.id
 
             <span className="card-title">Post Title {id}: Coffee and Burn</span>
             
-<p> Today I went to get a coffee and then did a work out #tired #dailyGrind</p>
+<p> Today I went to get a coffee and then did a work out #tired #dailyGrind </p>
 <div className="card-content grey lighten-4 grey-text">
 <div> Posted By BenCodes </div>
     <div> 27th May 2020 </div>
