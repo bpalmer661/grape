@@ -9,9 +9,9 @@ const SignedInLinks = () => {
 
     return(
         <ul className="right">
-<li><NavLink to='/'>New Post</NavLink></li>
+
 <li><NavLink to='/'>Log Out</NavLink></li>
-<li><NavLink to='/writePost'>Write Post</NavLink></li>
+<li><NavLink to='/writePost'>New Post</NavLink></li>
 
 
 <li><NavLink to='/' className='btn btn-floating blue lighten-1'>BP</NavLink></li>

@@ -12,11 +12,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* /////////////////////////////// */
   background: url(/img/rrf.jpeg) no-repeat;
   background-size: 100%;
   background-position: bottom;
   background-color: #79acd7;
   min-height: 100%;
+  /* /////////////////////////////// */
 }
 
 code {
@@ -24,7 +26,7 @@ code {
     monospace;
 }
 
-
+/* /////////////////////////////// */
 form {
   padding:20px;
   margin-top: 50px;
@@ -44,3 +46,4 @@ input[type=email]:not(.browser-default):focus:not([readonly]) + label,
 input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   color: #79acd7 !important;
 }
+/* /////////////////////////////// */
