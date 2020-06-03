@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
-export class WritePost extends Component {
+////////////////////////////////
+import { connect } from 'react-redux'
+import { createPost } from '../../store/actions/postActions'
+////////////////////////////////
+
+
+class WritePost extends Component {
 
 state = {
 title:'',
@@ -18,7 +24,11 @@ handleChange = (e) => {
 
 handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state) 
+    //console.log(this.props)
+    /////////////////////////////////
+    this.props.sendPost(this.state)
+
+    ////////////////////////////////////////
 }
 
 
@@ -58,3 +68,12 @@ handleSubmit = (e) => {
 }
 
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        sendPost: (post) => dispatch(createPost(post)),
+    }
+}
+
+
+//////////first parameter is null as it is reserved for mapStateToProps//////////
+export default connect(null,mapDispatchToProps)(WritePost)
