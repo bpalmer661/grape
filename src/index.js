@@ -3,25 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-/////////////////////////////////
 import { createStore, applyMiddleware, compose } from 'redux'
-///////////////////////////////
 import rootReducer from './store/reducers/rootReducer'
 import { Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 
-//////////////////////////////////////////
 
-import {
-  reduxFirestore,
+import { reduxFirestore, 
   getFirestore,
-  createFirestoreInstance
-} from "redux-firestore";
-import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
+  createFirestoreInstance} 
+  from "redux-firestore";
+import {ReactReduxFirebaseProvider,getFirebase } from "react-redux-firebase";
 import firebaseConfig from './config/FirebaseConfig'
 import firebase from "firebase/app";
-
-////////////////////////////////////////////////////////
 
 
 
@@ -33,12 +27,21 @@ import firebase from "firebase/app";
     )
   );
   
-//////////////////////////////////////////////////////////////////////
+
+  const rrfProps = {
+    firebase,
+    config: firebaseConfig,
+    dispatch: store.dispatch,
+    createFirestoreInstance
+  };
+  
 
 ReactDOM.render(
 
   <Provider store={store} >
-    <App />
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <App />
+    </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')
 );
