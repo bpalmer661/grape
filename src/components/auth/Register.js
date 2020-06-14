@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 
+///////////////////////////////////
+import { connect } from 'react-redux'
+import { register } from '../../store/actions/authActions'
+///////////////////////////////////
+
 export class Register extends Component {
 
 state = {
@@ -7,7 +12,6 @@ email:'',
 password:'',
 userName:'',
 }
-
 
 
 handleChange = (e) => {
@@ -19,8 +23,9 @@ handleChange = (e) => {
 
 handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
-    
+///////////////////////////////////
+    this.props.register(this.state)
+    ///////////////////////////////////
 }
 
     render() {
@@ -63,3 +68,17 @@ handleSubmit = (e) => {
 }
 
 
+const mapStateToProps = (state) => {
+    return{
+      auth: state.firebase.auth
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      register: (newUser) => dispatch(register(newUser))
+    }
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Register)
+  

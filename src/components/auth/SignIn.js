@@ -22,12 +22,12 @@ handleChange = (e) => {
     })
 }
 
-//////////////////////
+
 handleSubmit = (e) => {
     e.preventDefault();
     this.props.signIn(this.state)
   }
-////////////////////////
+
 
 
     render() {
@@ -73,7 +73,6 @@ handleSubmit = (e) => {
     }
 }
 
-////////////////////////////////////////////////
 const mapStateToProps = (state) => {
     return{
       authError: state.auth.authError
@@ -87,4 +86,4 @@ const mapStateToProps = (state) => {
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
-  ////////////////////////////////////////////////////////////////////////
+  
