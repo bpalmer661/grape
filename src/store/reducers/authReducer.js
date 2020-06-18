@@ -20,11 +20,26 @@ switch(action.type){
                 ...state,
                 authError: null
             }
-    //////////////////////////////////////////////////////////////////
             case 'SIGNOUT_SUCCESS':
                 console.log('sign out successful')
                 return state;
-    //////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////
+                 case 'REGISTRATION_SUCCESS':
+                     console.log("registration success")
+                     return{
+                         ...state,
+                         authError: null
+                     }
+       
+        case 'REGISTRATION_ERROR' :
+            console.log("registration error")
+            return{
+                ...state,
+                authError: action.err.message
+            }
+/////////////////////////////////////////////////////////////////
+        
             default:
                 return state;
 }

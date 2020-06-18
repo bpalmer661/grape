@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-
-////////////////////////////////
 import { connect } from 'react-redux'
 import { createPost } from '../../store/actions/postActions'
-////////////////////////////////
+
+///////////////////////////
+import { Redirect} from 'react-router-dom'
+///////////////////////////
 
 
 class WritePost extends Component {
@@ -24,16 +25,18 @@ handleChange = (e) => {
 
 handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(this.props)
-    /////////////////////////////////
     this.props.sendPost(this.state)
-
-    ////////////////////////////////////////
 }
 
 
 
     render() {
+
+
+const { auth } = this.props;
+
+if(auth.isLoaded && !auth.uid) return <Redirect to = '/signin' />
+
         return (
             <div className="container">
 
@@ -67,6 +70,13 @@ handleSubmit = (e) => {
     }
 }
 
+//////////////////////////////////////////////
+const mapStateToProps = (state) => {
+return {
+    auth: state.firebase.auth
+}
+}
+//////////////////////////////////////////////
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -74,6 +84,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-
-//////////first parameter is null as it is reserved for mapStateToProps//////////
-export default connect(null,mapDispatchToProps)(WritePost)
+//////////////////////////////////////////////
+export default connect(mapStateToProps,mapDispatchToProps)(WritePost)
+//////////////////////////////////////////////

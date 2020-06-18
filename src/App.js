@@ -8,8 +8,7 @@ import PostDetails from './components/posts/PostDetails'
 
 
 import  SignIn  from './components/auth/SignIn';
-
-import { Register } from './components/auth/Register';
+import  Register  from './components/auth/Register';
 import    WritePost  from './components/posts/WritePost';
 
 

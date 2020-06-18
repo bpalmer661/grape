@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-
-///////////////////////////////////
+import React, { Component } from 'react' 
 import { connect } from 'react-redux'
 import { register } from '../../store/actions/authActions'
-///////////////////////////////////
+
 
 export class Register extends Component {
 
@@ -16,19 +14,23 @@ userName:'',
 
 handleChange = (e) => {
     this.setState({
-[e.target.id]: e.target.id
+[e.target.id]: e.target.value   
+
     })
 }
 
 
 handleSubmit = (e) => {
     e.preventDefault();
-///////////////////////////////////
-    this.props.register(this.state)
-    ///////////////////////////////////
+   this.props.register(this.state)
+
+    
 }
 
     render() {
+
+        const { authError } = this.props;
+
         return (
             <div className="container">
 
@@ -58,9 +60,14 @@ handleSubmit = (e) => {
 
             <div className={"input-field"}>
            <button className={"btn blue lighten-1 z-depth-0"}>Register</button>
+            
+          
+<div className="red-text center">
+        {authError ? <p>{authError}</p> : null }
+</div>
+           
+            
             </div>
-
-
                 </form>
             </div>
         )
@@ -70,7 +77,8 @@ handleSubmit = (e) => {
 
 const mapStateToProps = (state) => {
     return{
-      auth: state.firebase.auth
+      auth: state.firebase.auth,
+      authError: state.auth.authError
     }
   }
   

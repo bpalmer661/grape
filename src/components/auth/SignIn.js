@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-
-
-////////////////////////////////////////////
 import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authActions'
-////////////////////////////////////////////
+
 
 export class SignIn extends Component {
 
@@ -51,10 +48,10 @@ handleSubmit = (e) => {
             <input type="password" id="password" onChange={this.handleChange}/>
             </div>
 
-            <div className={"input-field"}>
-            <label htmlFor="userName">User Name </label>
-            <input type="text" id="userName" onChange={this.handleChange}/>
-            </div>
+
+
+{/* //////////GOT RID OF USERNAME ON SIGN IN PAGE///////// */}
+          
 
 
 
