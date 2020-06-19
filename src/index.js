@@ -13,7 +13,7 @@ import { reduxFirestore,
   getFirestore,
   createFirestoreInstance} 
   from "redux-firestore";
-import {ReactReduxFirebaseProvider,getFirebase } from "react-redux-firebase";
+import {ReactReduxFirebaseProvider,getFirebase, reactReduxFirebase } from "react-redux-firebase";
 import firebaseConfig from './config/FirebaseConfig'
 import firebase from "firebase/app";
 

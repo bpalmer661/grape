@@ -10,8 +10,6 @@ import { Redirect} from 'react-router-dom'
 
 const PostDetails = (props) => {
 
-console.log(props)
-
 
 const { post,auth } = props;
 

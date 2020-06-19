@@ -50,11 +50,6 @@ handleSubmit = (e) => {
 
 
 
-{/* //////////GOT RID OF USERNAME ON SIGN IN PAGE///////// */}
-          
-
-
-
             <div className={"input-field"}>
            <button className={"btn blue lighten-1 z-depth-0"}>Login</button>
             
