@@ -12,11 +12,10 @@ const SignedInLinks = (props) => {
 
 <li><a onClick={props.signOut} to='/'>Log Out</a></li>
 <li><NavLink to='/writePost'>New Post</NavLink></li>
-{/* ///////////////////////////////////////////////////////////////// */}
 <li><NavLink to='/' className='btn btn-floating blue lighten-1'>
 {props.profile.username}
 </NavLink></li>
-{/* ///////////////////////////////////////////////////////////////// */}
+
         </ul>
     )
 }

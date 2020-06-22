@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createPost } from '../../store/actions/postActions'
-
-///////////////////////////
 import { Redirect} from 'react-router-dom'
-///////////////////////////
+
 
 
 class WritePost extends Component {
@@ -26,6 +24,8 @@ handleChange = (e) => {
 handleSubmit = (e) => {
     e.preventDefault();
     this.props.sendPost(this.state)
+    this.props.history.push('/')
+    
 }
 
 
@@ -70,13 +70,13 @@ if(auth.isLoaded && !auth.uid) return <Redirect to = '/signin' />
     }
 }
 
-//////////////////////////////////////////////
+
 const mapStateToProps = (state) => {
 return {
     auth: state.firebase.auth
 }
 }
-//////////////////////////////////////////////
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -84,6 +84,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-//////////////////////////////////////////////
+
 export default connect(mapStateToProps,mapDispatchToProps)(WritePost)
-//////////////////////////////////////////////

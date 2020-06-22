@@ -17,8 +17,6 @@ if(auth.isLoaded && !auth.uid) return  <Redirect to = '/signin' />
 
 
 
-
-
 if (post ){
 return(
 <div className="container section post-details">
@@ -30,8 +28,12 @@ return(
 <p> {post.content}</p>
 <div className="card-content grey lighten-4 grey-text">
 <div> Posted By {post.username} </div>
-    <div> 27th May 2020 </div>
+    {/* //////////////////////////////////// */}
+    <div> Posted {post.createdAt.toDate().toDateString()}</div>
+        {/* //////////////////////////////////// */}
     <div> Australia </div>
+    <div>  {post.userId} </div>
+
      </div>
     </div>
     </div>
