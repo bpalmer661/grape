@@ -14,7 +14,7 @@ return (
 <p>Posted By {post.username}</p>
 
 {/* //////////////////////////////////// */}
-<p className="grey-text">Posted by Ben</p>
+<p className="grey-text">Posted {post.createdAt.toDate().toDateString()}</p>
 {/* //////////////////////////////////// */}
 </div>
     </div>
