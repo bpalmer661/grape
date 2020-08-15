@@ -1,0 +1,19 @@
+.MyProfileStyles{
+    color: black;
+    align-items: center;
+    padding: 20px;
+}
+
+.editButton{
+color: black;
+margin-top: 20px;
+border: none;
+background-color: white;
+}
+
+
+.image{
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}
